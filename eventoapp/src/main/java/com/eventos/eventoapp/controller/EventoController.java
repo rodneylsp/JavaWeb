@@ -20,14 +20,14 @@ public class EventoController {
 
 	@RequestMapping(value="/cadastrarEvento", method=RequestMethod.GET)
 	public String form() {
-		return "evento/cadastrarEvento";
+		return "./evento/cadastrarEvento";
 	}
 	
 	@RequestMapping(value="/cadastrarEvento", method=RequestMethod.POST)
 	public String salvar(Evento evento) {
 		
 		repository.save(evento);
-		return "/eventos";
+		return "redirect:/eventos";
 	}
 	
 	@RequestMapping("/eventos")
@@ -45,7 +45,7 @@ public class EventoController {
 	public ModelAndView detalhesEvento(@PathVariable("id")Long id) {
 		
 		Optional<Evento> evento = repository.findById(id);
-		ModelAndView mv = new ModelAndView("evento/detalhesEvento");
+		ModelAndView mv = new ModelAndView("./evento/detalhesEvento");
 		if(evento.isPresent())
 				mv.addObject("evento",evento.get());
 		

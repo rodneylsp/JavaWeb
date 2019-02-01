@@ -2,13 +2,19 @@ package com.eventos.eventoapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class EventoappApplication {
+public class EventoappApplication extends SpringBootServletInitializer {
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(EventoappApplication.class);
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(EventoappApplication.class, args);
 	}
 
 }
-
