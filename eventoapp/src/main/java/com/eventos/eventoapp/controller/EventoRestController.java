@@ -24,7 +24,7 @@ public class EventoRestController {
 		if (!id.equals(0L)) {
 
 			Optional<Evento> evento = repository.findById(id);
-			if (!evento.isEmpty()) {
+			if (!evento.isPresent()) {
 				return new ResponseEntity<Evento>(evento.get(), HttpStatus.OK);
 			}
 		}
