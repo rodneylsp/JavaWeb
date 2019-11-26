@@ -12,13 +12,13 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 @Configuration
 public class DataConfiguration {
 	
-	private final String DRIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
+	private final String DRIVER_CLASS_NAME = "com.mysql.cj.jdbc.Driver";
 //	private final String DATABASE_URL = "jdbc:mysql://172.31.24.143:3306/db_eventos";
 //	//private final String DATABASE_URL = "jdbc:mysql://dev.cbztr9pztcwi.us-east-1.rds.amazonaws.com:3306/db_eventos";
 //	private final String DATABASE_USERNAME = "rodneylsp";
 //	private final String DATABASE_PASSWORD = "java#rodneylsp";
 	
-	private final String DATABASE_URL = "jdbc:mysql://localhost:3306/CLIENTES?useTimezone=true&serverTimezone=UTC";
+	private final String DATABASE_URL = "jdbc:mysql://localhost:3306/CLIENTES?useSSL=false&useTimezone=true&serverTimezone=UTC";
 	private final String DATABASE_USERNAME = "rodneylsp";
 	private final String DATABASE_PASSWORD = "rodneylsp";
 	private final String DATABASE_DIALECT = "org.hibernate.dialect.MySQL8Dialect";
